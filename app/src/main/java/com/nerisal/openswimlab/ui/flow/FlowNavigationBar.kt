@@ -4,8 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.sharp.Analytics
 import androidx.compose.material.icons.sharp.AreaChart
+import androidx.compose.material.icons.sharp.EmojiEvents
 import androidx.compose.material.icons.sharp.FormatListNumbered
+import androidx.compose.material.icons.sharp.Pool
 import androidx.compose.material.icons.sharp.Settings
 import androidx.compose.material.icons.sharp.Upload
 import androidx.compose.material3.BottomAppBar
@@ -28,23 +31,23 @@ fun FlowNavigationBar(
             ){
                 FlowNavigationButton(
                     onClick = { /* Do something */},
-                    text = "Overview",
-                    imageVector = Icons.Sharp.AreaChart,
-                    contentDescription = "Overview",
-                )
-
-                FlowNavigationButton(
-                    onClick = { /* Do something */},
                     text = "Workouts",
-                    imageVector = Icons.Sharp.FormatListNumbered,
+                    imageVector = Icons.Sharp.Pool,
                     contentDescription = "Workouts",
                 )
 
                 FlowNavigationButton(
                     onClick = { /* Do something */},
-                    text = "Upload",
-                    imageVector = Icons.Sharp.Upload,
-                    contentDescription = "Upload",
+                    text = "Analytics",
+                    imageVector = Icons.Sharp.Analytics,
+                    contentDescription = "Analytics",
+                )
+
+                FlowNavigationButton(
+                    onClick = { /* Do something */},
+                    text = "Records",
+                    imageVector = Icons.Sharp.EmojiEvents,
+                    contentDescription = "Records",
                 )
 
                 FlowNavigationButton(

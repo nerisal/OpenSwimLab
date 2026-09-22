@@ -40,7 +40,7 @@ fun FlowNavigationButton(
         Box(
 
             modifier = Modifier
-                .size(width = 70.dp, height = 40.dp)
+                .size(width = 65.dp, height = 35.dp)
                 .background(
                     color = colorScheme.secondary,
                     shape = RoundedCornerShape(20.dp)
