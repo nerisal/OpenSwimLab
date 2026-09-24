@@ -1,4 +1,4 @@
-package com.nerisal.openswimlab.ui.flow
+package com.nerisal.openswimlab.ui.theme.flow
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

@@ -1,4 +1,4 @@
-package com.nerisal.openswimlab.ui.flow
+package com.nerisal.openswimlab.ui.theme.flow
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -6,6 +6,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -15,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
@@ -23,9 +25,14 @@ fun FlowNavigationButton(
     onClick: () -> Unit,
     text: String,
     imageVector: ImageVector,
-    contentDescription: String?,
+    selected: Boolean
 ) {
-    var colorScheme = MaterialTheme.colorScheme
+    val colorScheme = MaterialTheme.colorScheme
+
+    val textColor = if(selected) colorScheme.primary else colorScheme.onPrimary
+    val backgroundColor = if(selected)  colorScheme.secondary else Color.Transparent
+    val iconTintColor = if(selected) colorScheme.primary else colorScheme.onPrimary
+
 
     Column(
         modifier = Modifier
@@ -33,16 +40,17 @@ fun FlowNavigationButton(
                 indication = null,
                 interactionSource = remember { MutableInteractionSource() },
                 onClick = onClick
-            ),
+            )
+            .fillMaxHeight(),
         verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+
     ) {
         Box(
-
             modifier = Modifier
                 .size(width = 65.dp, height = 35.dp)
                 .background(
-                    color = colorScheme.secondary,
+                    color = backgroundColor,
                     shape = RoundedCornerShape(20.dp)
                 ),
             contentAlignment = Alignment.Center,
@@ -51,15 +59,15 @@ fun FlowNavigationButton(
         {
             Icon(
                 imageVector = imageVector,
-                contentDescription = contentDescription,
-                tint = MaterialTheme.colorScheme.primary,
+                contentDescription = null,
+                tint = iconTintColor,
                 modifier = Modifier
-                    .size(24.dp)
+                    .size(FlowSizes.IconLarge)
             )
         }
         Text(
             text = text,
-            color = colorScheme.primary
+            color = textColor
         )
     }
 
