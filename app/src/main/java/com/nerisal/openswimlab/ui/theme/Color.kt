@@ -9,7 +9,8 @@ val FlowCyan = Color(0xFF042d3a)
 val FlowNavyDark = Color(0xFF01090E)
 
 val FlowNavy = Color(0xFF051A25)
-val FlowNavyMid = Color(0xFF0E4A75)
+val FlowNavyMid = Color(0xFF062235)
+
 val FlowNavyLight = Color(0xFF048bb5)
 
 val FlowWhite = Color(0xFFE0F0F6)
