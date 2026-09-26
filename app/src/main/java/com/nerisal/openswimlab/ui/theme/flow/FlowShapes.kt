@@ -31,7 +31,7 @@ fun buttonShapeByIndex(
 }
 
 @Composable
-fun verticalSpacingByIndex(
+fun contentPaddingByIndex(
     index: Int,
     count: Int,
 
