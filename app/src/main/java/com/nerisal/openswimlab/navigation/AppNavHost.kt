@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.nerisal.openswimlab.ui.settings.DebugScreen
 import com.nerisal.openswimlab.ui.workouts.WorkoutsScreen
 import com.nerisal.openswimlab.ui.settings.SettingsScreen
 import com.nerisal.openswimlab.ui.theme.flow.FlowBackground
@@ -39,9 +40,12 @@ fun AppNavHost(
                 }
                 composable<SettingsRoute> {
                     SettingsScreen(
-                        onDebugClick = { /* navController.navigate(Debug) quando lo aggiungi */ },
+                        onDebugClick = { navController.navigate(DebugRoute)},
                         onBack = { navController.popBackStack() }
                     )
+                }
+                composable<DebugRoute> {
+                    DebugScreen { navController.popBackStack() }
                 }
             }
         }

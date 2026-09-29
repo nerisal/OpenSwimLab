@@ -4,25 +4,16 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.sharp.AcUnit
-import androidx.compose.material.icons.sharp.AddToDrive
-import androidx.compose.material.icons.sharp.BubbleChart
-import androidx.compose.material.icons.sharp.BugReport
 import androidx.compose.material.icons.sharp.Code
+import androidx.compose.material.icons.sharp.Dataset
 import androidx.compose.material.icons.sharp.DeveloperMode
-import androidx.compose.material.icons.sharp.Handyman
-import androidx.compose.material.icons.sharp.Info
-import androidx.compose.material.icons.sharp.Policy
-import androidx.compose.material.icons.sharp.TableBar
-import androidx.compose.material.icons.sharp.WaterDrop
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardAction
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardButtonsGroup
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardItem
@@ -34,7 +25,7 @@ fun SettingsScreen(
     onBack:() -> Unit,
 ) {
     val general = listOf({})
-    var showDevOptions by remember { mutableStateOf(false) }
+    var showDevOptions by rememberSaveable { mutableStateOf(false) }
 
     val about = listOf(
         FlowCardItem(
@@ -48,9 +39,9 @@ fun SettingsScreen(
             action = FlowCardAction.Toggle(checked = showDevOptions, onCheckedChange = {showDevOptions = !showDevOptions}),
         ),
         FlowCardItem(
-            icon = Icons.Sharp.TableBar,
+            icon = Icons.Sharp.Dataset,
             label = "Developer Screen",
-            action = FlowCardAction.Navigate({}),
+            action = FlowCardAction.Navigate(onDebugClick),
             hidden = !showDevOptions
         )
     )

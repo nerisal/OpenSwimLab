@@ -7,3 +7,6 @@ object SettingsRoute
 
 @Serializable
 object WorkoutsRoute
+
+@Serializable
+object DebugRoute
