@@ -1,6 +1,16 @@
+>[!WARNING]
+>**Early development — Alpha**
+>
+>This project is in an early stage of development.
+>The application is not yet functional and is not ready for general use.
+
+
 # Logo #TODO
 
 <br>
+
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![Stability](https://img.shields.io/badge/stability-not--functional-red)
 
 
 
