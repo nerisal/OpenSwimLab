@@ -1,3 +1,7 @@
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![Stability](https://img.shields.io/badge/stability-not--functional-red)
+
+
 >[!WARNING]
 >**Early development — Alpha**
 >
@@ -9,8 +13,6 @@
 
 <br>
 
-![Status](https://img.shields.io/badge/status-alpha-orange)
-![Stability](https://img.shields.io/badge/stability-not--functional-red)
 
 
 
