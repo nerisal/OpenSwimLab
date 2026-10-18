@@ -1,16 +1,14 @@
 package com.nerisal.openswimlab.model
 
-import java.time.Instant
-
 data class Record(
-    val timestamp: Instant?,
+    val timestamp: Long?,
 
     val heartRate: Int?,
 
-    val speed: Double?,
-    val enhancedSpeed: Double?,
+    val speed: Float?,
+    val enhancedSpeed: Float?,
 
-    val cadence: Double?,
+    val cadence: Int?,
 
-    val temperature: Double?
+    val temperature: Float?
 )

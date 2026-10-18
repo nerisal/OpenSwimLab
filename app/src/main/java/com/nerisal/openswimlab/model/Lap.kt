@@ -4,50 +4,51 @@
 
 package com.nerisal.openswimlab.model
 
-import com.nerisal.openswimlab.model.enums.LapType
-import com.nerisal.openswimlab.model.enums.SwimStroke
 
-import java.time.Duration
-import java.time.Instant
+import com.garmin.fit.EventType
+import com.garmin.fit.SwimStroke
 
 data class Lap(
-    val number: Int, // Number of lap in the workout
+    val index: Int, // Number of lap in the workout
 
     // times
-    val startTime: Instant?, // todo
-    val duration: Duration?, // fit:
+    val startTime: Long?, // fit:
+    val timestamp: Long?, // fit:
+    val elapsedTime: Float?,
+    val timerTime: Float?,
+    val activeTime: Float?,
 
     // distance
-    val distance: Int?, // fit: total_distance
+    val distance: Float?, // fit: total_distance
 
     // calories
     val totalCalories: Int?, // fit: total_calories
 
     // type
-    val lapType: LapType?, // tells if is an active lap (swimming) or a rest lap.
+    val lapType: EventType?, // tells if is an active lap (swimming) or a rest lap.EventType
 
-    // heart rate
+    // heart rate lengths: List<LengthMesg>
     val avgHeartRate: Int?, // fit: avg_heart_rate
     val maxHeartRate: Int?, // fit: max_hearth_rate
     val minHeartRate: Int?, // fit: min_hearth_rate
 
     // stroke
-    var swimStroke: SwimStroke, // fit: swim_stroke. Average SwimStroke of the lap. Is Medley if there is at least two different strokes.
-    var totalStrokes: Int?, // fit: total_strokes
-    var avgStrokeDistance: Double?, // fit: avg_stroke_distance
+    val swimStroke: SwimStroke, // fit: swim_stroke. Average SwimStroke of the lap. Is Medley if there is at least two different strokes.
+    val totalStrokes: Int?, // fit: total_strokes
+    val avgStrokeDistance: Float?, // fit: avg_stroke_distance
 
     // swolf
-    var avgSwolf: Int?, // to be calculated
+    val avgSwolf: Int? = null, // to be calculated
 
     // cadence
-    var maxCadence: Int?, // fit: max_cadence
-    var avgCadence: Int?, // fit: avg_cadence
+    val maxCadence: Int?, // fit: max_cadence
+    val avgCadence: Int?, // fit: avg_cadence
 
     // speed
-    var avgSpeed: Double?, // fit: avg_speed
-    var maxSpeed: Double?, // fit: max_speed
+    val avgSpeed: Float?, // fit: avg_speed
+    val maxSpeed: Float?, // fit: max_speed
 
     // lengths
-    var numLengths: Int?, // fit: num_lengths
-    val lengths: List<Length>?,
-)
+    val numLengths: Int?, // fit: num_lengths
+    val numActiveLengths: Int?,
+    )
