@@ -1,5 +1,5 @@
  <p align="center">
-  <img src="docs/assets/banner.png" alt="Project Banner" width="100%">
+  <img src="docs/assets/banner.webp" alt="Project Banner" width="100%">
 </p>
 
 ![Status](https://img.shields.io/badge/status-alpha-orange)
