@@ -1,3 +1,7 @@
+ <p align="center">
+  <img src="docs/assets/banner.jpg" alt="Project Banner" width="100%">
+</p>
+
 ![Status](https://img.shields.io/badge/status-alpha-orange)
 ![Stability](https://img.shields.io/badge/stability-not--functional-red)
 
