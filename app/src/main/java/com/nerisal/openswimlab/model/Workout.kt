@@ -5,6 +5,7 @@ package com.nerisal.openswimlab.model
 // This structure is fine for now. Take in consideration again if there are more sessions in a single .fit file
 data class Workout(
     val id: String,
+    val name: String?,
 
     val activity: Activity?,
     val devices: List<DeviceInfo>?,

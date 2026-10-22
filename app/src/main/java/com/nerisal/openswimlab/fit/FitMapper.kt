@@ -23,6 +23,7 @@ class FitMapper {
 
         val workout = Workout(
             id = UUID.randomUUID().toString(),
+            name = "",
             activity = mapActivity(raw.activity),
             devices = raw.deviceInfo.map { mapDeviceInfo(it) },
             sessions = raw.sessions.map { mapSession(it)},
