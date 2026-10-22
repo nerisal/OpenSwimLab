@@ -43,15 +43,15 @@ fun contentPaddingByIndex(
 
     val isBottom = index == count - 1
 
-    if (isBottom) {
-        return PaddingValues(
+    return if (isBottom) {
+        PaddingValues(
             top = spacing,
             bottom = spacing,
             start = spacing,
             end = spacing
         )
     } else {
-        return PaddingValues(
+        PaddingValues(
             top = spacing,
             bottom = 0.dp,
             start = spacing,
