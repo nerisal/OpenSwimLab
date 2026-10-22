@@ -38,7 +38,6 @@ private val LightColorScheme = lightColorScheme(
     onBackground = FlowNavyDark,
     onSurface = FlowNavyDark,
     error = FlowCoral,
-
 )
 
 @Composable
