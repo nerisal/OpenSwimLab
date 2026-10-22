@@ -1,12 +1,11 @@
-package com.nerisal.openswimlab.ui.theme.flow
+package com.nerisal.openswimlab.ui.widgets
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.sharp.Analytics
-import androidx.compose.material.icons.sharp.EmojiEvents
+import androidx.compose.material.icons.sharp.CalendarMonth
 import androidx.compose.material.icons.sharp.Pool
 import androidx.compose.material.icons.sharp.Settings
 import androidx.compose.material3.BottomAppBar
@@ -19,12 +18,16 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.nerisal.openswimlab.navigation.AnalyticsRoute
+import com.nerisal.openswimlab.navigation.PlansRoute
 import com.nerisal.openswimlab.navigation.SettingsRoute
 import com.nerisal.openswimlab.navigation.WorkoutsRoute
+import com.nerisal.openswimlab.navigation.navigateToTab
+import com.nerisal.openswimlab.ui.theme.flow.FlowNavigationButton
+import com.nerisal.openswimlab.ui.workouts.PlansScreen
 
-@SuppressLint("RestrictedApi")
 @Composable
-fun FlowNavigationBar(
+fun NavigationBar(
     navController: NavHostController
 ) {
     val backStackEntry by navController.currentBackStackEntryAsState()
@@ -40,46 +43,28 @@ fun FlowNavigationBar(
                 verticalAlignment = Alignment.CenterVertically
             ){
                 FlowNavigationButton(
-                    onClick = { navController.navigateToTab(WorkoutsRoute)},
+                    onClick = { navController.navigateToTab(WorkoutsRoute) },
                     text = "Workouts",
                     imageVector = Icons.Sharp.Pool,
                     selected = currentDestination?.hasRoute<WorkoutsRoute>() == true
                 )
 
                 FlowNavigationButton(
-                    onClick = { /* Do something */},
+                    onClick = { navController.navigateToTab(PlansRoute) },
+                    text = "Plans",
+                    imageVector = Icons.Sharp.CalendarMonth,
+                    selected = currentDestination?.hasRoute<PlansRoute>() == true
+                )
+
+                FlowNavigationButton(
+                    onClick = { navController.navigateToTab(AnalyticsRoute)},
                     text = "Analytics",
                     imageVector = Icons.Sharp.Analytics,
-                    selected = false
-                )
-
-                FlowNavigationButton(
-                    onClick = { /* Do something */},
-                    text = "Records",
-                    imageVector = Icons.Sharp.EmojiEvents,
-                    selected = false
-                )
-
-                FlowNavigationButton(
-                    onClick = { navController.navigateToTab(SettingsRoute)},
-                    text = "Settings",
-                    imageVector = Icons.Sharp.Settings,
-                    selected = currentDestination?.hasRoute<SettingsRoute>() == true
+                    selected = currentDestination?.hasRoute<AnalyticsRoute>() == true
                 )
             }
-
-
-
         }
     )
 }
 
-private fun NavHostController.navigateToTab(route: Any) {
-    navigate(route) {
-        popUpTo(graph.findStartDestination().id) {
-            saveState = true
-        }
-        launchSingleTop = true
-        restoreState = true
-    }
-}
+

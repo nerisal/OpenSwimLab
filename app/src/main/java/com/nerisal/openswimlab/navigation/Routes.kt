@@ -9,4 +9,10 @@ object SettingsRoute
 object WorkoutsRoute
 
 @Serializable
+object PlansRoute
+
+@Serializable
+object AnalyticsRoute
+
+@Serializable
 object DebugRoute

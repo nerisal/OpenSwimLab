@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardAction
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardButtonsGroup
 import com.nerisal.openswimlab.ui.theme.flow.FlowCardItem
@@ -24,14 +25,14 @@ fun SettingsScreen(
     onDebugClick: () -> Unit,
     onBack:() -> Unit,
 ) {
-    val general = listOf({})
+    val general = listOf {}
     var showDevOptions by rememberSaveable { mutableStateOf(false) }
 
     val about = listOf(
         FlowCardItem(
             icon = Icons.Sharp.Code,
             label = "Repository",
-            action = FlowCardAction.Link("https://github.com/")
+            action = FlowCardAction.Link("https://github.com/nerisal/OpenSwimLab")
         ),
         FlowCardItem(
             icon = Icons.Sharp.DeveloperMode,
@@ -46,7 +47,7 @@ fun SettingsScreen(
         )
     )
 
-    Column(modifier = Modifier.padding(FlowSpacing.Medium), verticalArrangement = Arrangement.SpaceEvenly) {
+    Column(modifier = Modifier.padding(start = FlowSpacing.Medium, end = FlowSpacing.Medium, top = 0.dp), verticalArrangement = Arrangement.SpaceEvenly) {
         Text(modifier = Modifier.padding(FlowSpacing.Small), text = "General")
 
         Text(modifier = Modifier.padding(FlowSpacing.Small), text = "App")

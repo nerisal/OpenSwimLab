@@ -36,7 +36,7 @@ import com.nerisal.openswimlab.fit.debug.DebugViewModel
 import kotlinx.coroutines.launch
 
 @Composable
-fun DebugScreen(viewModel: DebugViewModel = viewModel(), onBack: () -> Unit) {
+fun DebugScreen(viewModel: DebugViewModel = viewModel()) {
     val context = LocalContext.current
     val clipboardManager = LocalClipboard.current
     val coroutineScope = rememberCoroutineScope()
@@ -66,7 +66,6 @@ fun DebugScreen(viewModel: DebugViewModel = viewModel(), onBack: () -> Unit) {
 
             item {
                 Row(modifier = Modifier.padding(vertical = 8.dp)) {
-                    TextButton(onClick = onBack) { Text("← Back") }
 
                     Button(onClick = { filePickerLauncher.launch(arrayOf("*/*")) }) {
                         Text("Select .fit file")
@@ -105,8 +104,6 @@ fun DebugScreen(viewModel: DebugViewModel = viewModel(), onBack: () -> Unit) {
                         }
                     }
                 }
-
-
             }
 
             when {
@@ -120,7 +117,7 @@ fun DebugScreen(viewModel: DebugViewModel = viewModel(), onBack: () -> Unit) {
                         Text(msg.name, fontFamily = FontFamily.Monospace)
                         msg.fields.forEach { f ->
                             Text(
-                                "    ${f.name} = ${f.displayValue}",
+                                "   ${f.name} = ${f.displayValue}",
                                 fontFamily = FontFamily.Monospace
                             )
                         }
