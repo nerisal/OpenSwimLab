@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">OpenSwimLab</string>
+    <string name="app_name">Open Swim Lab</string>
+    <string name="app_name_short">Swim Lab</string>
 </resources>
